@@ -90,6 +90,13 @@ def get_info():
                     'get_chunks : str, function (default = "chunks")': "A function that takes in a list of all the nodes as input and returns an iterable `node_chunks`. The default chunking is done by slicing the `nodes` into `n_jobs` number of chunks."
                 },
             },
+            "closeness_centrality": {
+                "url": "https://github.com/networkx/nx-parallel/blob/main/nx_parallel/algorithms/centrality/closeness.py#L11",
+                "additional_docs": "The parallel implementation of closeness centrality, that use parallel tiled floy warshall to find the geodesic distance of the node",
+                "additional_parameters": {
+                    "blocking_factor : number": "The number used for divinding the adjacency matrix in sub-matrix. The default blocking factor is get by finding the optimal value for the core available"
+                },
+            },
             "closeness_vitality": {
                 "url": "https://github.com/networkx/nx-parallel/blob/main/nx_parallel/algorithms/vitality.py#L10",
                 "additional_docs": "The parallel computation is implemented only when the node is not specified. The closeness vitality for each node is computed concurrently.",
@@ -102,6 +109,14 @@ def get_info():
                 "additional_docs": "The parallel computation is implemented by dividing the nodes into chunks and computing edge betweenness centrality for each chunk concurrently.",
                 "additional_parameters": {
                     'get_chunks : str, function (default = "chunks")': "A function that takes in a list of all the nodes as input and returns an iterable `node_chunks`. The default chunking is done by slicing the `nodes` into `n_jobs` number of chunks."
+                },
+            },
+            "floyd_warshall": {
+                "url": "https://github.com/networkx/nx-parallel/blob/main/nx_parallel/algorithms/shortest_paths/dense.py#L12",
+                "additional_docs": "Parallel implementation of Floyd warshall using the tiled floyd warshall algorithm  [1]_.",
+                "additional_parameters": {
+                    "blocking_factor : number": "The number used for divinding the adjacency matrix in sub-matrix. The default blocking factor is get by finding the optimal value for the core available",
+                    "A : 2D array": "All pairs shortest paths Graph adjacency matrix",
                 },
             },
             "is_reachable": {

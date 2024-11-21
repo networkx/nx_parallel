@@ -18,6 +18,7 @@ ALGORITHMS = [
     # Centrality
     "betweenness_centrality",
     "edge_betweenness_centrality",
+    "closeness_centrality",
     # Efficiency
     "local_efficiency",
     # Shortest Paths : generic
@@ -38,6 +39,7 @@ ALGORITHMS = [
     "approximate_all_pairs_node_connectivity",
     # Connectivity
     "connectivity.all_pairs_node_connectivity",
+    "floyd_warshall",
 ]
 
 
