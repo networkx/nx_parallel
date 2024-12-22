@@ -139,6 +139,14 @@ def get_info():
                     'get_chunks : str, function (default = "chunks")': "A function that takes in a list of all the isolated nodes as input and returns an iterable `isolate_chunks`. The default chunking is done by slicing the `isolates` into `n_jobs` number of chunks."
                 },
             },
+            "parallel_bfs": {
+                "url": "https://github.com/networkx/nx-parallel/blob/main/nx_parallel/algorithms/traversal/breadth_first_search.py#L10",
+                "additional_docs": "Perform a parallelized Breadth-First Search (BFS) on the graph.",
+                "additional_parameters": {
+                    "G : graph": 'A NetworkX graph. source : node, optional Starting node for the BFS traversal. If None, BFS is performed for all nodes. get_chunks : str or function (default="chunks") A function to divide nodes into chunks for parallel processing. If "chunks", the nodes are split into `n_jobs` chunks automatically. n_jobs : int, optional Number of jobs to run in parallel. If None, defaults to the number of CPUs.',
+                    "bfs_result : dict": "A dictionary where keys are nodes and values are their BFS traversal order.",
+                },
+            },
             "square_clustering": {
                 "url": "https://github.com/networkx/nx-parallel/blob/main/nx_parallel/algorithms/cluster.py#L11",
                 "additional_docs": "The nodes are chunked into `node_chunks` and then the square clustering coefficient for all `node_chunks` are computed in parallel over `n_jobs` number of CPU cores.",
